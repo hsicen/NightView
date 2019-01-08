@@ -17,5 +17,6 @@ class Practice9DrawPathView : View {
         super.onDraw(canvas)
 
         //        练习内容：使用 canvas.drawPath() 方法画心形
+
     }
 }

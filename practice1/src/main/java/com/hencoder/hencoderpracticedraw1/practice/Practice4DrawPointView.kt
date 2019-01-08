@@ -30,9 +30,9 @@ class Practice4DrawPointView : View {
         mPaint.strokeWidth = 80f
 
         mPaint.strokeCap = Paint.Cap.ROUND
-        canvas.drawPoint(400f,400f,mPaint)
+        canvas.drawPoint(400f, 400f, mPaint)
 
         mPaint.strokeCap = Paint.Cap.SQUARE
-        canvas.drawPoint(700f,400f,mPaint)
+        canvas.drawPoint(700f, 400f, mPaint)
     }
 }
