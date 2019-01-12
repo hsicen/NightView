@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
@@ -16,7 +16,8 @@ import android.view.View
  */
 class Practice11PieChartView : View {
     var mPaint = Paint()
-    var mPath = Path()
+    private val mRectF = RectF(200f, 20f, 800f, 620f)
+    private val mMaxRectF = RectF(180f, 0f, 780f, 600f)
 
     constructor(context: Context) : super(context)
 
@@ -29,54 +30,87 @@ class Practice11PieChartView : View {
 
         //        综合练习
         //        练习内容：使用各种 Canvas.drawXXX() 方法画饼图
-        mPaint.style = Paint.Style.FILL
-        mPaint.color = Color.parseColor("#cdabef")
+        canvas.drawColor(Color.parseColor("#506E7A"))
+
+        mPaint.color = Color.WHITE
+        mPaint.textSize = 45f
         mPaint.isAntiAlias = true
-        canvas.drawArc(200f, 100f, 750f, 650f, 185f, 130f, true, mPaint)
+        canvas.drawText("饼图", 480f, 680f, mPaint)
+
+        mPaint.textSize = 25f
+        mPaint.strokeWidth = 2f
+        canvas.drawText("Lollipop", 10f, 40f, mPaint)
+        canvas.drawLines(
+            floatArrayOf(
+                110f, 40f, 280f, 40f, 280f, 40f,
+                (480 - 300 * Math.sin(Math.toRadians(30.0))).toFloat(),
+                (300 - 300 * Math.cos(Math.toRadians(30.0))).toFloat()
+            ), mPaint
+        )
+
+        canvas.drawText("KitKat", 60f, 610f, mPaint)
+        canvas.drawLines(
+            floatArrayOf(
+                150f, 605f, 320f, 605f, 320f, 605f,
+                (500 - 300 * Math.sin(Math.toRadians(30.0))).toFloat(),
+                (320 + 300 * Math.cos(Math.toRadians(30.0))).toFloat()
+            ), mPaint
+        )
+        canvas.drawText("Marshmallow", 900f, 170f, mPaint)
+        canvas.drawLines(
+            floatArrayOf(
+                (500 + 300 * Math.cos(Math.toRadians(30.0))).toFloat(),
+                (320 - 300 * Math.sin(Math.toRadians(30.0))).toFloat(),
+                820f, 165f, 820f, 165f, 900f, 165f
+            ), mPaint
+        )
+        canvas.drawText("Froyo", 900f, 330f, mPaint)
+        canvas.drawLines(floatArrayOf(800f, 325f, 900f, 325f), mPaint)
+        canvas.drawText("Gingerbread", 900f, 370f, mPaint)
+        canvas.drawLines(
+            floatArrayOf(
+                (500 + 300 * Math.cos(Math.toRadians(5.0))).toFloat(),
+                (320 + 300 * Math.sin(Math.toRadians(5.0))).toFloat(),
+                830f,
+                (320 + 300 * Math.sin(Math.toRadians(5.0))).toFloat() + 10,
+                830f,
+                (320 + 300 * Math.sin(Math.toRadians(5.0))).toFloat() + 10,
+                900f, 365f
+            ), mPaint
+        )
+        canvas.drawText("Ice Cream Sandwich", 900f, 410f, mPaint)
+        canvas.drawLines(
+            floatArrayOf(
+                (500 + 300 * Math.cos(Math.toRadians(12.0))).toFloat(),
+                (320 + 300 * Math.sin(Math.toRadians(12.0))).toFloat(),
+                830f,
+                (320 + 300 * Math.sin(Math.toRadians(12.0))).toFloat() + 10,
+                830f,
+                (320 + 300 * Math.sin(Math.toRadians(12.0))).toFloat() + 10,
+                900f, 405f
+            ), mPaint
+        )
+
+        canvas.drawText("Jelly Bean", 900f, 540f, mPaint)
+        canvas.drawLines(
+            floatArrayOf(
+                (500 + 300 * Math.cos(Math.toRadians(45.0))).toFloat(),
+                (320 + 300 * Math.sin(Math.toRadians(45.0))).toFloat(),
+                800f, 540f, 800f, 540f, 900f, 535f
+            ), mPaint
+        )
 
         mPaint.color = Color.YELLOW
-        canvas.drawArc(220f, 120f, 770f, 670f, 315f, 60f, true, mPaint)
-
-        mPaint.color = Color.RED
-        canvas.drawArc(220f, 120f, 770f, 670f, 377f, 7f, true, mPaint)
-
-        mPaint.color = Color.GRAY
-        canvas.drawArc(220f, 120f, 770f, 670f, 386f, 5f, true, mPaint)
-
-        mPaint.color = Color.GREEN
-        canvas.drawArc(220f, 120f, 770f, 670f, 393f, 50f, true, mPaint)
-
+        canvas.drawArc(mRectF, -60f, 60f, true, mPaint)
+        mPaint.color = Color.parseColor("#8E24AA")
+        canvas.drawArc(mRectF, 2f, 5f, true, mPaint)
+        mPaint.color = Color.parseColor("#D7CCC8")
+        canvas.drawArc(mRectF, 9f, 5f, true, mPaint)
+        mPaint.color = Color.parseColor("#66BB6A")
+        canvas.drawArc(mRectF, 16f, 60f, true, mPaint)
         mPaint.color = Color.BLUE
-        canvas.drawArc(220f, 120f, 770f, 670f, 445f, 100f, true, mPaint)
-
-        //绘字
-        mPaint.color = Color.WHITE
-        mPaint.textSize = 30f
-        canvas.drawText("Lollipop", 20f, 100f, mPaint)
-        mPaint.style = Paint.Style.STROKE
-        mPaint.strokeWidth = 5f
-
-        mPath.moveTo(120f, 100f)
-        mPath.rLineTo(150f, 0f)
-        mPath.rLineTo(50f, 50f)
-
-        mPath.moveTo(750f, 320f)
-        mPath.rLineTo(30f, -40f)
-        mPath.rLineTo(150f, 0f)
-
-        mPath.moveTo(750f, 490f)
-        mPath.lineTo(880f, 500f)
-
-        mPath.moveTo(730f, 520f)
-        mPath.rLineTo(100f, 20f)
-
-        mPath.moveTo(650f, 600f)
-
-        canvas.drawPath(mPath, mPaint)
-
-        mPaint.style = Paint.Style.FILL
-        mPaint.strokeWidth = 3f
-        mPaint.textSize = 40f
-        canvas.drawText("饼图", 450f, 730f, mPaint)
+        canvas.drawArc(mRectF, 78f, 100f, true, mPaint)
+        mPaint.color = Color.RED
+        canvas.drawArc(mMaxRectF, 180f, 118f, true, mPaint)
     }
 }
