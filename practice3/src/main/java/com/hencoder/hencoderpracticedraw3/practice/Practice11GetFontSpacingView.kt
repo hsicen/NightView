@@ -6,7 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class Practice10SetTextAlignView : View {
+class Practice11GetFontSpacingView : View {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     internal var text = "Hello HenCoder"
 
@@ -19,24 +19,19 @@ class Practice10SetTextAlignView : View {
 
     init {
         paint.textSize = 60f
-        // 使用 Paint.setTextAlign() 来调整文字对齐方式
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        // 使用 Paint.setTextAlign() 来调整文字对齐方式
+        // 使用 Paint.getFontSpacing() 来获取推荐的行距
 
-        // 第一处：使用 Paint.Align.LEFT
-        paint.textAlign = Paint.Align.LEFT
-        canvas.drawText(text, (width / 2).toFloat(), 100f, paint)
+        val spacing = paint.fontSpacing
 
-        // 第二处：使用 Paint.Align.CENTER
-        paint.textAlign = Paint.Align.CENTER
-        canvas.drawText(text, (width / 2).toFloat(), 200f, paint)
+        canvas.drawText(text, 50f, 100f, paint)
 
-        // 第三处：使用 Paint.Align.RIGHT
-        paint.textAlign = Paint.Align.RIGHT
-        canvas.drawText(text, (width / 2).toFloat(), 300f, paint)
+        canvas.drawText(text, 50f, 100 + spacing, paint)
+
+        canvas.drawText(text, 50f, 100 + spacing * 2, paint)
     }
 }
