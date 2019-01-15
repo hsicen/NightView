@@ -63,13 +63,13 @@ class Practice14FlipboardView : View {
         val x = centerX - bitmapWidth / 2f
         val y = centerY - bitmapHeight / 2f
 
-        //draw upper
+        //draw top
         canvas.save()
         canvas.clipRect(0f, 0f, width.toFloat(), centerY)
         canvas.drawBitmap(bitmap, x, y, paint)
         canvas.restore()
 
-        //draw downer
+        //draw bottom
         canvas.save()
         if (degree < 90) {
             // if the degree lower 90, then clip the bottom one
@@ -88,5 +88,16 @@ class Practice14FlipboardView : View {
 
         canvas.drawBitmap(bitmap, x, y, paint)
         canvas.restore()
+    }
+
+    //child view draw method
+    override fun dispatchDraw(canvas: Canvas?) {
+        super.dispatchDraw(canvas)
+
+    }
+
+    override fun onDrawForeground(canvas: Canvas?) {
+        super.onDrawForeground(canvas)
+
     }
 }
