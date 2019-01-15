@@ -8,13 +8,22 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
 
+/**
+ * <p>作者：Night  2019/1/15 10:16
+ * <p>邮箱：codinghuang@163.com
+ * <p>作用：
+ * <p>描述：getTextBounds 方法
+ *
+ * 获取指定字符串的start，end，top，bottom的位置
+ *
+ */
 class Practice13GetTextBoundsView : View {
     private var paint1 = Paint(Paint.ANTI_ALIAS_FLAG)
     private var paint2 = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    val mTexts = arrayOf("A", "a", "J", "j", "Â", "â")
-    val mOffsets = arrayOf(0, 0, 0, 0, 0, 0)
-    val mRect = Rect()
+    private val mTexts = arrayOf("A", "a", "J", "j", "Â", "â")
+    private val mOffsets = arrayOf(0, 0, 0, 0, 0, 0)
+    private val mRect = Rect()
 
     internal var top = 200
     internal var bottom = 400

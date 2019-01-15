@@ -32,6 +32,6 @@ class Practice11GetFontSpacingView : View {
 
         canvas.drawText(text, 50f, 100 + spacing, paint)
 
-        canvas.drawText(text, 50f, 100 + spacing * 2, paint)
+        canvas.drawText(text, 50f, 100 + spacing * 4, paint)
     }
 }

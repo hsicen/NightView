@@ -5,10 +5,11 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import java.util.*
 
 class Practice06SetStrikeThruTextView : View {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    internal var text = "Hello HenCoder"
+    internal var text = "Hello HenCoder 黄思程"
 
     constructor(context: Context) : super(context)
 
@@ -26,6 +27,7 @@ class Practice06SetStrikeThruTextView : View {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
+        paint.textLocale = Locale.JAPAN
         canvas.drawText(text, 50f, 100f, paint)
     }
 }
