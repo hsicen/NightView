@@ -41,7 +41,9 @@ public class Sample13CameraRotateHittingFaceView extends View {
 
     {
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maps);
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth() * 2, bitmap.getHeight() * 2, true);
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap,
+                bitmap.getWidth() * 2,
+                bitmap.getHeight() * 2, true);
         bitmap.recycle();
         bitmap = scaledBitmap;
 
@@ -50,7 +52,7 @@ public class Sample13CameraRotateHittingFaceView extends View {
         animator.setRepeatCount(ValueAnimator.INFINITE);
 
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        float newZ = - displayMetrics.density * 6;
+        float newZ = -displayMetrics.density * 6;
         camera.setLocation(0, 0, newZ);
     }
 
