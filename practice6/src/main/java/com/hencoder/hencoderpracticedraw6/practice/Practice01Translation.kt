@@ -13,7 +13,42 @@ import android.widget.RelativeLayout
 import com.hencoder.hencoderpracticedraw6.Utils.dpToPixel
 import kotlinx.android.synthetic.main.sample_translation.view.*
 
+/**
+ * <p>作者：Night  2019/1/16 9:23
+ * <p>邮箱：codinghuang@163.com
+ * <p>作用：
+ * <p>描述：
+ *
+ * view.animate()
+ *
+ * ViewPropertyAnimator
+ * translationX()
+ * translationXBy()
+ *      interceptor
+ *      setListener
+ *      setUpdateListener
+ *      withStartAction
+ *      withEndAction
+ *
+ *
+ * ObjectAnimator
+ *      addListener
+ *      addUpdateListener
+ *      addPauseListener
+ *
+ *
+ *  different interceptor's differences
+ *  diy your own interceptor
+ *
+ *  withStartAction   &  withEndAction
+ *  onAnimationStart  &  onAnimationEnd
+ *  onAnimationCancel
+ *  onAnimationRepeat
+ */
 class Practice01Translation : RelativeLayout {
+    var mClickCount = 0
+    var mAnimationCount = 6
+
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
@@ -21,6 +56,7 @@ class Practice01Translation : RelativeLayout {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
             : super(context, attrs, defStyleAttr)
 
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
 
@@ -30,8 +66,21 @@ class Practice01Translation : RelativeLayout {
         }
 
         animateBt.setOnClickListener {
-            // TODO 在这里处理点击事件，通过 View.animate().translationX/Y/Z() 来让 View 平移
-            imageView.animate().translationX(500f).rotation(180f)
+            when (mClickCount) {
+                0 -> imageView.animate().translationX(500f)
+                1 -> imageView.animate().translationX(0f)
+                2 -> imageView.animate().translationY(500f) //translationY
+                3 -> imageView.animate().translationY(0f) //back to original
+                4 -> if (SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    imageView.animate().translationZ(50f)
+                }
+                5 -> if (SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    imageView.animate().translationZ(0f)
+                }
+            }
+
+            mClickCount++
+            if (mClickCount >= mAnimationCount) mClickCount = 0
         }
     }
 

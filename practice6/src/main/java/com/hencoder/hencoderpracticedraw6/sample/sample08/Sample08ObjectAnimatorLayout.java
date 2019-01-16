@@ -2,12 +2,11 @@ package com.hencoder.hencoderpracticedraw6.sample.sample08;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-
 import com.hencoder.hencoderpracticedraw6.R;
 
 public class Sample08ObjectAnimatorLayout extends RelativeLayout {
@@ -30,15 +29,15 @@ public class Sample08ObjectAnimatorLayout extends RelativeLayout {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        view = (Sample08ObjectAnimatorView) findViewById(R.id.objectAnimatorView);
-        animateBt = (Button) findViewById(R.id.animateBt);
+        view = findViewById(R.id.objectAnimatorView);
+        animateBt = findViewById(R.id.animateBt);
 
         animateBt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator animator = ObjectAnimator.ofFloat(view, "progress", 0, 65);
-                animator.setDuration(1000);
-                animator.setInterpolator(new FastOutSlowInInterpolator());
+                ObjectAnimator animator = ObjectAnimator.ofFloat(view, "progress", 0, 85);
+                animator.setDuration(1500);
+                animator.setInterpolator(new OvershootInterpolator());
                 animator.start();
             }
         });
