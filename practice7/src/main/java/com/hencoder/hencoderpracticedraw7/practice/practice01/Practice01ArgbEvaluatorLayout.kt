@@ -14,6 +14,9 @@ import kotlinx.android.synthetic.main.practice_argb_evaluator.view.*
  * <p>邮箱：codinghuang@163.com
  * <p>作用：
  * <p>描述：diy color evaluator
+ *
+ *
+ * the use of TypeEvaluator
  */
 class Practice01ArgbEvaluatorLayout : RelativeLayout {
     constructor(context: Context) : super(context)
