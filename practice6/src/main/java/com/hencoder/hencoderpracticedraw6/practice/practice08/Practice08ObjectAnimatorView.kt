@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 
 import com.hencoder.hencoderpracticedraw6.Utils.dpToPixel
@@ -18,6 +19,10 @@ class Practice08ObjectAnimatorView : View {
 
     // 为 progress 添加 getter 和 setter 方法（setter 方法记得加 invalidate()）
     private var progress = 0f
+        get() {
+            Log.d("hsc", "$field")
+            return field
+        }
         set(value) {
             field = value
             invalidate()
