@@ -68,8 +68,10 @@ class MainActivity : AppCompatActivity() {
 
     private inner class PageModel internal constructor(
         @param:LayoutRes @field:LayoutRes
-        internal var sampleLayoutRes: Int, @param:StringRes @field:StringRes
-        internal var titleRes: Int, @param:LayoutRes @field:LayoutRes
+        internal var sampleLayoutRes:
+        Int, @param:StringRes @field:StringRes
+        internal var titleRes: Int,
+        @param:LayoutRes @field:LayoutRes
         internal var practiceLayoutRes: Int
     )
 }

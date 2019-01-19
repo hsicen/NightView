@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.widget.RelativeLayout
 import kotlinx.android.synthetic.main.practice_keyframe.view.*
 
@@ -30,6 +31,8 @@ class Practice06KeyframeLayout : RelativeLayout {
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
+
+        setLayerType(View.LAYER_TYPE_SOFTWARE,null)
 
         animateBt.setOnClickListener {
             // 使用 Keyframe.ofFloat() 来为 view 的 progress 属性创建关键帧  objectAnimatorView

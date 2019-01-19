@@ -33,8 +33,8 @@ class Practice01AfterOnDrawView : AppCompatImageView {
             canvas.concat(imageMatrix)
             val bounds = it.bounds
             canvas.drawText(
-                resources.getString(R.string.image_size, bounds.width(), bounds.height()),
-                20f, 40f, paint
+                    resources.getString(R.string.image_size, bounds.width(), bounds.height()),
+                    20f, 40f, paint
             )
             canvas.restore()
         }

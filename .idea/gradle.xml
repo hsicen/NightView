@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/check1" />
             <option value="$PROJECT_DIR$/practice1" />
             <option value="$PROJECT_DIR$/practice2" />
             <option value="$PROJECT_DIR$/practice3" />
@@ -16,6 +17,7 @@
             <option value="$PROJECT_DIR$/practice5" />
             <option value="$PROJECT_DIR$/practice6" />
             <option value="$PROJECT_DIR$/practice7" />
+            <option value="$PROJECT_DIR$/salecard" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

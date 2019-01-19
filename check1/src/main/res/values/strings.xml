@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">check1</string>
+
+    <string name="title_praise">点赞</string>
+    <string name="title_ruler">直尺</string>
+    <string name="title_flip">翻页</string>
+
+</resources>
