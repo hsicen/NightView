@@ -11,11 +11,12 @@ import com.hencoder.hencoderpracticedraw5.R
 class Practice01AfterOnDrawView : AppCompatImageView {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
+            : super(context, attrs, defStyleAttr)
 
     init {
         paint.color = Color.parseColor("#FFC107")
