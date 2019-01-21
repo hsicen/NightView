@@ -33,6 +33,21 @@ import android.widget.ImageView
  *      S2：在super.onMeasure()的下面用getMeasuredWidth()和getMeasuredHeight()来获取到之前的测量结果
  *              并根据使用自己的算法，根据测量结果计算出新的结果
  *      S3：调用setMeasuredDimension()来保存新的结果
+ *
+ *
+ * 自定义全新View尺寸：
+ *      S1：重写onMeasure()，自己计算出View的尺寸
+ *      S2：调用resolveSize()，纠正View的尺寸信息
+ *      S3：setMeasureDimension()，设置View尺寸
+ *
+ *自定义ViewGroup：
+ *      1. 重写onMeasure()来计算内部布局(重点)
+ *      2. 重写onLayout(0来摆放子View
+ *
+ * 重写onMeasure()的三个步骤：
+ *      1. 调用每个子View的measure()来计算子View的尺寸
+ *      2. 计算子View的位置并保存子View的位置和尺寸
+ *      3. 计算自己的尺寸并调用setMeasureDimension()保存
  */
 class Practice01SquareImageView : ImageView {
     constructor(context: Context) : super(context)
