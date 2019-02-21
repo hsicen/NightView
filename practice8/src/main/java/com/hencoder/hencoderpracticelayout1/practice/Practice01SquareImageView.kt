@@ -50,8 +50,8 @@ import android.widget.ImageView
  *      3. 计算自己的尺寸并调用setMeasureDimension()保存
  */
 class Practice01SquareImageView : ImageView {
-    constructor(context: Context) : super(context)
 
+    constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
             : super(context, attrs, defStyleAttr)
